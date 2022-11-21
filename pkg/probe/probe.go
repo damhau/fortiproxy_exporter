@@ -108,10 +108,10 @@ func (p *ProbeCollector) Probe(ctx context.Context, target string, hc *http.Clie
 		// timestamp for the metrics probe, in Prometheus, is obtained from the query time, not the reply time.
 		// This is especially important when running all the probes takes many seconds.
 		{"System/Time/Clock", probeSystemTime},
-		{"BGP/NeighborPaths/IPv4", probeBGPNeighborPathsIPv4},
-		{"BGP/NeighborPaths/IPv6", probeBGPNeighborPathsIPv6},
-		{"BGP/Neighbors/IPv4", probeBGPNeighborsIPv4},
-		{"BGP/Neighbors/IPv6", probeBGPNeighborsIPv6},
+		//{"BGP/NeighborPaths/IPv4", probeBGPNeighborPathsIPv4},
+		//{"BGP/NeighborPaths/IPv6", probeBGPNeighborPathsIPv6},
+		//{"BGP/Neighbors/IPv4", probeBGPNeighborsIPv4},
+		//{"BGP/Neighbors/IPv6", probeBGPNeighborsIPv6},
 		{"Firewall/LoadBalance", probeFirewallLoadBalance},
 		{"Firewall/Policies", probeFirewallPolicies},
 		{"License/Status", probeLicenseStatus},
@@ -132,11 +132,11 @@ func (p *ProbeCollector) Probe(ctx context.Context, target string, hc *http.Clie
 		{"VPN/IPSec", probeVPNIPSec},
 		{"VPN/Ssl/Connections", probeVPNSsl},
 		{"VPN/Ssl/Stats", probeVPNSslStats},
-		{"VirtualWAN/HealthCheck", probeVirtualWANHealthCheck},
-		{"WebUI/State", probeWebUIState},
-		{"Wifi/APStatus", probeWifiAPStatus},
-		{"Wifi/Clients", probeWifiClients},
-		{"Wifi/ManagedAP", probeWifiManagedAP},
+		//{"VirtualWAN/HealthCheck", probeVirtualWANHealthCheck},
+		//{"WebUI/State", probeWebUIState},
+		//{"Wifi/APStatus", probeWifiAPStatus},
+		//{"Wifi/Clients", probeWifiClients},
+		//{"Wifi/ManagedAP", probeWifiManagedAP},
 	} {
 		wanted := false
 
