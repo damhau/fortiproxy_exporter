@@ -30,9 +30,12 @@ func probeSystemResourceUsage(c http.FortiHTTP, meta *TargetMetadata) ([]prometh
 	type resUsage struct {
 		Current float64
 	}
+	type resUsageStr struct {
+		Current float64 `json:",string"`
+	}
 	type resContainer struct {
 		CPU []resUsage
-		Mem []resUsage
+		Mem []resUsageStr
 		// Ignore "disk", we get that from log/current-disk-usage instead with better resolution
 		Session  []resUsage
 		Session6 []resUsage
@@ -92,9 +95,12 @@ func probeSystemVDOMResources(c http.FortiHTTP, meta *TargetMetadata) ([]prometh
 	type resUsage struct {
 		Current float64
 	}
+	type resUsageStr struct {
+		Current float64 `json:",string"`
+	}
 	type resContainer struct {
 		CPU []resUsage
-		Mem []resUsage
+		Mem []resUsageStr
 		// Ignore "disk", we get that from log/current-disk-usage instead with better resolution
 		Session  []resUsage
 		Session6 []resUsage
